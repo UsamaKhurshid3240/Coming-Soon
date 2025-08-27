@@ -1,0 +1,12 @@
+name: Generate Tests
+
+on:
+  repository_dispatch:
+    types: [generate-tests]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print success message
+        run: echo "✅ Repo B triggered successfully from PR: ${{ github.event.client_payload.pr }}"
